@@ -1,0 +1,68 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+.eggs/
+
+# Logs & caches
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.DS_Store
+.cache/
+coverage/
+*.coverage
+htmlcov/
+
+# Jupyter / IPython
+.ipynb_checkpoints
+*.ipynb
+
+# ======================
+# VS Code / Editor junk
+# ======================
+.vscode/
+.idea/
+*.code-workspace
+
+# ======================
+# OS files
+# ======================
+Thumbs.db
+.DS_Store
+
+# ======================
+# Streamlit & local runtime
+# ======================
+.streamlit/
+.streamlit/secrets.toml
+
+# ======================
+# Build / Distribution
+# ======================
+build/
+dist/
+*.spec
+
+# ======================
+# Backup / temp
+# ======================
+*.bak
+*.swp
+*.tmp

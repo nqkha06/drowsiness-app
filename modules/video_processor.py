@@ -260,15 +260,9 @@ class VideoProcessor:
         return output_frame
     
     def is_camera_active(self) -> bool:
-        """
-        Check if camera is active and capturing.
-        
-        Returns:
-            True if camera is active, False otherwise
-        """
-        return (self.cap is not None and 
-                self.cap.isOpened() and 
-                self.is_running)
+        """Return True if camera is ready (opened), even if not capturing yet."""
+        return self.cap is not None and self.cap.isOpened()
+
     
     def get_camera_info(self) -> dict:
         """

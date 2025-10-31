@@ -94,7 +94,12 @@ class AlertService:
         """
         # Play sound alert if enabled
         if self.sound_enabled:
-            self._play_alert_sound()
+            # Play sound in a separate thread so UI/main processing never blocks
+            try:
+                threading.Thread(target=self._play_alert_sound, daemon=True).start()
+            except Exception:
+                # If threading fails for any reason, fallback to direct call
+                self._play_alert_sound()
         
         # Call callback if set
         if self.alert_callback:
@@ -103,7 +108,31 @@ class AlertService:
     def _play_alert_sound(self) -> None:
         """Play alert sound (internal method)."""
         try:
-            # Try using playsound library
+            # First, prefer a bundled alert.wav if present at repo root or module folder
+            import os
+            repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+            possible_locations = [
+                os.path.join(repo_root, 'alert.wav'),
+                os.path.join(os.path.dirname(__file__), 'alert.wav')
+            ]
+
+            alert_file = None
+            for p in possible_locations:
+                if os.path.isfile(p):
+                    alert_file = p
+                    break
+
+            if alert_file:
+                # Play the file using playsound (in this thread _play_alert_sound is already threaded)
+                try:
+                    from playsound import playsound
+                    playsound(alert_file)
+                    return
+                except Exception:
+                    # If playsound fails, continue to generated beep fallback
+                    pass
+
+            # If no alert.wav found or playing it failed, generate a beep sound
             self._play_beep_sound()
         except Exception:
             # Fallback to system beep

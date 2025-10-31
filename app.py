@@ -60,8 +60,8 @@ def initialize_components():
     
     if st.session_state.detector is None:
         st.session_state.detector = DrowsinessDetector(
-            ear_threshold=0.25,
-            consecutive_frames_threshold=20,
+            ear_threshold=0.28,
+            consecutive_frames_threshold=5,
             alert_cooldown=5.0
         )
 
@@ -268,7 +268,7 @@ def show_detection_page():
             update_ear_chart(chart_placeholder)
             
         # Auto-refresh
-        time.sleep(0.1)
+        time.sleep(0.5)
         st.rerun()
     
     else:

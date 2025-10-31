@@ -109,7 +109,8 @@ class DrowsinessDetector:
         self.current_left_ear = left_ear
         self.current_right_ear = right_ear
         self.current_ear = avg_ear
-        
+        print("EAR:", avg_ear)
+
         # Check for drowsiness
         drowsy_frame = avg_ear < self.ear_threshold
         
