@@ -1,0 +1,11 @@
+streamlit==1.29.0
+opencv-python==4.8.1.78
+dlib==19.24.2
+imutils==0.5.4
+numpy==1.24.3
+scipy==1.11.4
+playsound==1.2.2
+Pillow==10.1.0
+matplotlib==3.8.2
+plotly==5.17.0
+pandas==2.1.4
