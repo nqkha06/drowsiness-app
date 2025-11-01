@@ -44,7 +44,7 @@ drowsiness_app/
 
 ```bash
 # Navigate to your project directory
-cd drowsiness_app
+cd drowsiness-app
 
 # Install Python dependencies
 pip install -r requirements.txt
@@ -67,6 +67,7 @@ bunzip2 shape_predictor_68_face_landmarks.dat.bz2
 2. Extract the `.dat` file to the `drowsiness_app` directory
 
 ### Step 3: Run the Application
+.venv\Scripts\activate
 
 ```bash
 streamlit run app.py

@@ -55,17 +55,6 @@ def euclidean_distance(point1: Tuple[int, int], point2: Tuple[int, int]) -> floa
     return np.sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
 
 
-def ensure_directory_exists(directory_path: str) -> None:
-    """
-    Create directory if it doesn't exist.
-    
-    Args:
-        directory_path: Path to the directory
-    """
-    if not os.path.exists(directory_path):
-        os.makedirs(directory_path)
-
-
 def format_timestamp(timestamp: str) -> str:
     """
     Format timestamp for display.
@@ -80,50 +69,3 @@ def format_timestamp(timestamp: str) -> str:
     dt = datetime.fromisoformat(timestamp)
     return dt.strftime("%Y-%m-%d %H:%M:%S")
 
-
-def calculate_moving_average(values: List[float], window_size: int = 5) -> List[float]:
-    """
-    Calculate moving average of values.
-    
-    Args:
-        values: List of numeric values
-        window_size: Size of the moving window
-        
-    Returns:
-        List of moving averages
-    """
-    if len(values) < window_size:
-        return values
-    
-    moving_averages = []
-    for i in range(len(values) - window_size + 1):
-        window_avg = sum(values[i:i + window_size]) / window_size
-        moving_averages.append(window_avg)
-    
-    # Pad the beginning with original values
-    return values[:window_size-1] + moving_averages
-
-
-def validate_ear_threshold(threshold: float) -> bool:
-    """
-    Validate EAR threshold value.
-    
-    Args:
-        threshold: EAR threshold value
-        
-    Returns:
-        True if valid, False otherwise
-    """
-    return 0.1 <= threshold <= 0.5
-
-
-def get_alert_sound_path() -> str:
-    """
-    Get the path to the alert sound file.
-    
-    Returns:
-        Path to alert sound file
-    """
-    # This would be the path to an actual sound file
-    # For this implementation, we'll use a system beep
-    return None

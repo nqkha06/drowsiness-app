@@ -62,7 +62,7 @@ def initialize_components():
         st.session_state.detector = DrowsinessDetector(
             ear_threshold=0.28,
             consecutive_frames_threshold=5,
-            alert_cooldown=5.0
+            alert_cooldown=1.0
         )
 
 def main():
