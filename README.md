@@ -177,12 +177,6 @@ Where p1-p6 are the 6 facial landmarks around each eye.
    - Increase frame processing delay
    - Close other applications
 
-### Performance Optimization
-
-- Use lower camera resolution (640x480)
-- Reduce frame rate if needed
-- Run on systems with good CPU performance
-- Ensure sufficient lighting for face detection
 
 ## Technical Details
 
@@ -207,39 +201,3 @@ Where p1-p6 are the 6 facial landmarks around each eye.
 - `duration_seconds`: Alert duration
 - `severity`: Alert level (LOW/MEDIUM/HIGH)
 - `notes`: Additional information
-
-**Sessions Table:**
-- `id`: Session ID
-- `start_time`: Session start
-- `end_time`: Session end
-- `total_alerts`: Alert count
-- `session_duration`: Total duration
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License. See LICENSE file for details.
-
-## Acknowledgments
-
-- dlib library for facial landmark detection
-- Streamlit for the web interface framework
-- OpenCV community for computer vision tools
-
-## Support
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review GitHub issues
-3. Create a new issue with detailed information
-
----
-
-**Note**: This application is for educational and research purposes. For production use in safety-critical applications, additional testing and validation are required.
