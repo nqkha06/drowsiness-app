@@ -1,6 +1,3 @@
-# Drowsiness Detection App
-
-A real-time driver drowsiness detection system built with Streamlit, OpenCV, and dlib using the Eye Aspect Ratio (EAR) algorithm.
 
 ## Features
 
@@ -105,26 +102,6 @@ The app will open in your default web browser at `http://localhost:8501`
 1. Go to the "History" page
 2. View alert statistics and recent alerts
 3. Export alert data to CSV for analysis
-
-## How It Works
-
-### Eye Aspect Ratio (EAR) Algorithm
-
-The EAR algorithm calculates the ratio of eye height to width using facial landmarks:
-
-```
-EAR = (||p2-p6|| + ||p3-p5||) / (2 * ||p1-p4||)
-```
-
-Where p1-p6 are the 6 facial landmarks around each eye.
-
-### Detection Logic
-
-1. **Face Detection**: dlib detects faces in video frames
-2. **Landmark Extraction**: 68 facial landmarks are identified
-3. **EAR Calculation**: Eye aspect ratios are computed for both eyes
-4. **Drowsiness Detection**: EAR below threshold for consecutive frames triggers alert
-5. **Alert System**: Audio/visual notifications and database logging
 
 ### Typical EAR Values
 
